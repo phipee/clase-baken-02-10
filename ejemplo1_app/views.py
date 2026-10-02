@@ -6,8 +6,8 @@ def mostrar_libros(request):
     return render(request, "libros.html", {'libros': lista})
     
 def mostrar_libros_con_editoriales(request):
-    
-    return render(request, "libros_con_editoriales.html")
+    editoriales = libro.objects.get(id=id).editorial.alast()
+    return render(request, "libros_con_editoriales.html", {"editorial": editoriales})
 
 def mostrar_editoriales_libros(request):
     return render(request, "editoriales_y_libros.html")
